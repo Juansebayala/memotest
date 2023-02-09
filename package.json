@@ -1,0 +1,22 @@
+{
+  "name": "memotest",
+  "version": "1.0.0",
+  "description": "Juego de memotest para tarea de r/Argentina-Programa",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juansebayala/memotest.git"
+  },
+  "author": "Juan Sebastián Ayala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juansebayala/memotest/issues"
+  },
+  "homepage": "https://github.com/Juansebayala/memotest#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}

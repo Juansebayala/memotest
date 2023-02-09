@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memotest</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="src/css/styles.css">
+  <style>
+
+    h1 {
+      color: white;
+    }
+
+    body {
+      background-image: url(src/img/fondo.jpg);
+      background-size: contain;
+    }
+
+    .menu {
+      background-color: darkgreen;
+      color: white;
+      opacity: 0.9;
+      margin: 5px;
+    }
+
+    .cartas {
+      background-image: url(src/img/reverso.png);
+      background-size: cover;
+      height: calc((1vw / 12) * 9 * 16);
+      margin: 5px;
+      cursor: pointer;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1 class="text-center">Juego de memotest</h1>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col menu text-center rounded">
+        <div>
+          <h2>Menu</h2>
+          <button class="btn btn-success">Jugar</button>
+          <p>Tiempo jugado: <span id="tiempo-jugado"></span></p>
+          <p>Puntos obtenidos: <span id="puntos"></span></p>
+          <button class="btn btn-success">Volver a empezar</button>
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="row">
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+        </div>
+        <div class="row">
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+        </div>
+        <div class="row">
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+          <div class="col cartas rounded"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="text-center">
+    <p class="position-absolute bottom-0 center-50">Creado por Juan Sebastián Ayala</p>
+  </footer>
+</body>
+</html>
