@@ -38,6 +38,7 @@
         border-radius: 5px;
         transition: opacity 0.8s;
       }
+
       img {
         object-fit: cover;
         width: 100%;
@@ -47,7 +48,11 @@
       }
 
       .modal-body {
-        width: 70%;
+        width: 80%;
+      }
+
+      #creador {
+        color: white;
       }
       
     </style>
@@ -56,12 +61,14 @@
     <div id="modal-juego-ganado" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class="modal-body mx-auto">
-            <div class="alert alert-success text-center" role="alert">
+          <div class="modal-body mx-auto text-center">
+            <div class="alert alert-success" role="alert">
               Haz ganado!!!
             </div>
-            <div class="mx-auto">
-              <button class="btn btn-success">Volver a empezar</button>
+            <p>Tiempo jugado: <span id="tiempo-jugado-modal">00:00</span></p>
+            <p>Intentos realizados: <span id="intentos-modal">0</span></p>
+            <div class="d-flex justify-content-center">
+              <button class="btn btn-success volver-a-empezar">Reiniciar</button>
             </div>
           </div>
         </div>
@@ -75,8 +82,8 @@
             <h2>Menu</h2>
             <button id="jugar" class="btn btn-success">Jugar</button>
             <p>Tiempo jugado: <span id="tiempo-jugado">00:00</span></p>
-            <p>Puntos obtenidos: <span id="puntos"></span></p>
-            <button class="btn btn-success">Volver a empezar</button>
+            <p>Intentos realizados: <span id="intentos">0</span></p>
+            <button class="btn btn-success volver-a-empezar">Reiniciar</button>
           </div>
         </div>
         <div class="col-10">
@@ -161,13 +168,15 @@
         </div>
       </div>
     </div>
-    <footer class="text-center">
-      <p class="position-absolute bottom-0 center-50">
+    <footer class="d-flex justify-content-center">
+      <p id="creador" class="position-absolute bottom-0">
         Creado por Juan Sebastián Ayala
       </p>
     </footer>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="src/js/tiempo-jugado.js"></script>
+    <script src="src/js/evento-volver-a-empezar.js"></script>
     <script src="src/js/index.js"></script>
   </body>
 </html>
