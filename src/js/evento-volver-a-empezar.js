@@ -13,10 +13,6 @@ function resetearJuego() {
   habilitarBotonJugar();
 }
 
-function habilitarBotonJugar() {
-  $botonJugar.onclick = comenzarJuego;
-}
-
 function mostrarCartas($cartas) {
   $cartas.forEach(function($carta) {
     ocultarImagenCarta($carta);
@@ -28,7 +24,8 @@ function mostrarCartas($cartas) {
 }
 
 function ocultarImagenCarta($carta) {
-  $carta.childNodes[1].style.opacity = "0";
+  const $imagenCarta = $carta.childNodes[1];
+  $imagenCarta.style.opacity = "0";
 }
 
 function desabilitarClicCartas($cartas) {
@@ -48,4 +45,8 @@ function resetearTiempoJugado() {
 function resetearIntentosRealizados() {
   intentosRealizados = 0;
   document.querySelector("#intentos").textContent = '0';
+}
+
+function habilitarBotonJugar() {
+  $botonJugar.onclick = comenzarJuego;
 }

@@ -29,17 +29,10 @@ function agregarParImagenes() {
     12: "",
   };
 
-  const $imgCartas = document.querySelectorAll(".carta .reverso");
-  for (let i = 0; i < $imgCartas.length; i++) {
-    const $imagenAleatoria = conseguirImagenAleatoria(contadorImagenes);
-    $imgCartas[i].src = "src/img/" + $imagenAleatoria;
-  }
-}
-
-function vaciarImagenesCartas() {
-  const $imagenesCartas = document.querySelectorAll('.reverso');
+  const $imagenesCartas = document.querySelectorAll(".reverso");
   $imagenesCartas.forEach(function($imagen) {
-    $imagen.setAttribute("src", "");
+    const $imagenAleatoria = conseguirImagenAleatoria(contadorImagenes);
+    $imagen.src = "src/img/" + $imagenAleatoria;
   });
 }
 
@@ -73,18 +66,18 @@ function conseguirImagenAleatoria(contadorImagenes) {
 
   return imagenAleatoria;
 }
-//cambiar nombres de variables
-function comprobarImagenesRepetidas(numeroImagen, referenciaImagen, imagenes) {
-  const $imgCartas = document.querySelectorAll(".carta .reverso");
-  if (Object.values(imagenes)[numeroImagen] === true) {
+
+function comprobarImagenesRepetidas(indiceImagen, referenciaImagen, contadorImagenes) {
+  const $imagenesCartas = document.querySelectorAll(".reverso");
+  if (Object.values(contadorImagenes)[indiceImagen] === true) {
     return true;
   }
 
-  for (let i = 0; i < $imgCartas.length; i++) {
-    if ($imgCartas[i].src.includes(referenciaImagen)) {
-      imagenes[numeroImagen + 1] = true;
+  $imagenesCartas.forEach(function($imagen) {
+    if ($imagen.src.includes(referenciaImagen)) {
+      contadorImagenes[indiceImagen + 1] = true;
     }
-  }
+  });
 }
 
 let cartasSeleccionadas = [];
@@ -93,7 +86,7 @@ let intentosRealizados = 0;
 
 function manejarRonda() {
   const $cartas = document.querySelectorAll(".carta");
-  $cartas.forEach(function ($carta) {
+  $cartas.forEach(function($carta) {
     $carta.onclick = manejarCartas;
   });
 }
@@ -101,7 +94,6 @@ function manejarRonda() {
 function manejarCartas(event) {
   const sonidoSeleccionCarta = new Audio('src/audios/seleccionar-carta.mp3');
   sonidoSeleccionCarta.play();
-  $cartas = document.querySelectorAll(".carta");
   const $cartaSeleccionada = event.target.parentNode;
   if (cartasSeleccionadas[0] != $cartaSeleccionada) {
     cartasSeleccionadas.push($cartaSeleccionada);
@@ -167,6 +159,13 @@ function desabilitarParCartas(primeraCarta, segundaCarta) {
 function ocultarImagenesParCartas(primeraCarta, segundaCarta) {
   primeraCarta.childNodes[1].style.opacity = "0";
   segundaCarta.childNodes[1].style.opacity = "0";
+}
+
+function vaciarImagenesCartas() {
+  const $imagenesCartas = document.querySelectorAll('.reverso');
+  $imagenesCartas.forEach(function($imagen) {
+    $imagen.setAttribute("src", "");
+  });
 }
 
 function vaciarCartasSeleccionadas() {
