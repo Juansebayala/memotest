@@ -98,6 +98,8 @@ function manejarRonda() {
 }
 
 function manejarCartas(event) {
+  const sonidoSeleccionCarta = new Audio('src/audios/seleccionar-carta.mp3');
+  sonidoSeleccionCarta.play();
   $cartas = document.querySelectorAll(".carta");
   const $cartaSeleccionada = event.target.parentNode;
   if (cartasSeleccionadas[0] != $cartaSeleccionada) {
@@ -109,6 +111,8 @@ function manejarCartas(event) {
     comprobarParCartas(cartasSeleccionadas);
   }
   if (paresEncontrados.length === 12) {
+    const sonidoJuegoGanado = new Audio('src/audios/juego-ganado.mp3');
+    sonidoJuegoGanado.play();
     mostrarMensajeJuegoGanado();
     finTiempoJugado = true;
     agregarTiempoJugadoAMensajeFinal();
@@ -131,6 +135,8 @@ function comprobarParCartas(cartas) {
   const imagenPrimeraCarta = cartas[0].childNodes[1].src;
   const imagenSegundaCarta = cartas[1].childNodes[1].src;
   if (imagenPrimeraCarta === imagenSegundaCarta) {
+    const sonidoParEncontrado = new Audio('src/audios/par-encontrado.mp3');
+    sonidoParEncontrado.play();
     desabilitarClicCartasSeleccionadas();
     setTimeout(function () {
       ocultarParCartas(cartas[0], cartas[1]);
