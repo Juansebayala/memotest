@@ -3,6 +3,7 @@ const $botonJugar = document.querySelector("#jugar");
 $botonJugar.onclick = comenzarJuego;
 
 function comenzarJuego() {
+  cartasSeleccionadas = [];
   paresEncontrados = [];
   vaciarImagenesCartas();
   desabilitarBotonJugar();
