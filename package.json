@@ -4,7 +4,8 @@
   "description": "Juego de memotest para tarea de r/Argentina-Programa",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "empezar": "http-server",
+    "cypress": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
   "dependencies": {
     "bootstrap": "^5.2.3",
     "jquery": "^3.6.3"
+  },
+  "devDependencies": {
+    "cypress": "^12.5.1"
   }
 }
