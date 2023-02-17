@@ -38,8 +38,9 @@ describe("Pruebas Memotest", () => {
             par[1].click();
           });
 
-          cy.wait(4000);
-          cy.get('#modal-juego-ganado').should('be.visible');
+          cy.wait(5000).then(() => {
+            cy.get('#modal-juego-ganado').should('be.visible');
+          });
         });
     });
   });
